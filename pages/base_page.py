@@ -20,3 +20,8 @@ class BasePage:
 
     def get_text_from_element(self, locator):
         return self.find_element_with_wait(locator).text
+
+    def format_locators(self, locator_f, num):
+        method, locator = locator_f
+        locator = locator.format(num)
+        return (method, locator)
