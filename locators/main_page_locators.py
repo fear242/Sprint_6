@@ -3,15 +3,17 @@ from selenium.webdriver.common.by import By
 
 class MainPageLocators:
 
+    BUTTON_COOKIES = By.XPATH, '//*[contains(@class, "App_CookieButton_")]'
     HEADER_SCOOTER_LOGO = By.XPATH, '//*[starts-with(@class, "Header_LogoScooter_")]'
     HEADER_YANDEX_LOGO = By.XPATH, '//*[starts-with(@class, "Header_LogoYandex_")]'
     BUTTON_ORDER_IN_MIDDLE = By.XPATH, '//*[contains(@class, "Button_Middle") and text()="Заказать"]'
     BUTTON_ORDER_HEADER = By.XPATH, '//*[contains(@class, "Header_Nav")]/child::button[text()="Заказать"]'
-    QUESTION_LOCATOR = By.XPATH, '//*[@id="accordion__heading-{}"]'
-    ANSWER_LOCATOR = By.XPATH, '//*[@id="accordion__panel-{}"]'
+    QUESTIONS_BLOCK = By.XPATH, '//*[@class="accordion"]'
+    QUESTION_LOCATOR = By.ID, 'accordion__heading-{}'
+    ANSWER_LOCATOR = By.ID, 'accordion__panel-{}'
     NAME_FIELD = By.XPATH, '//*[contains(@placeholder, "Имя")]'
     FAMILY_NAME_FIELD = By.XPATH, '//*[contains(@placeholder, "Фамилия")]'
-    ADDRESS_FIELD = By.XPATH,'//*[contains(@placeholder, "Адрес")]'
+    ADDRESS_FIELD = By.XPATH, '//*[contains(@placeholder, "Адрес")]'
     METRO_FIELD = By.XPATH, '//*[contains(@placeholder, "метро")]'
     METRO_STATION = By.XPATH, '//*[@class="select-search__row"]'
     PHONE_NUMBER_FIELD = By.XPATH, '//*[contains(@placeholder, "Телефон")]'
@@ -23,6 +25,5 @@ class MainPageLocators:
     RENTAL_PERIOD_SELECTOR = By.XPATH, '//*[@class="Dropdown-option"]'
     COLOR = By.XPATH, '//*[@id="black"]'
     BUTTON_CONFIRM_ORDER = By.XPATH, '//*[contains(@class, "Button_Middle") and text()="Да"]'
-
-
-
+    MODAL_ORDER_PLACED = By.XPATH, '//*[contains(@class, "Order_Modal_")]'
+    BUTTON_SEARCH = By.XPATH, '//*[text()="Найти"]'
