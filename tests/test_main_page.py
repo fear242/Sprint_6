@@ -1,6 +1,5 @@
 import pytest
 import allure
-from locators.main_page_locators import MainPageLocators
 from pages.main_page import MainPage
 from data import Results
 
@@ -23,10 +22,6 @@ class TestMainPage:
     @allure.title('Проверка соответствия текста ответов вопросам')
     def test_questions_and_answers(self, driver, num, result):
         main_page = MainPage(driver)
-        driver.get('https://qa-scooter.praktikum-services.ru/')
-        main_page.scroll_to_element(MainPageLocators.QUESTIONS_BLOCK)
-        assert main_page.get_text_from_answer(
-            MainPageLocators.QUESTION_LOCATOR,
-            MainPageLocators.ANSWER_LOCATOR,
-            num
-        ) == result
+        main_page.open_main_paige_confirm_cookies()
+        main_page.scroll_to_questions_block()
+        assert main_page.get_text_from_answer(num) == result

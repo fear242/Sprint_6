@@ -1,5 +1,6 @@
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+import allure
 
 
 class BasePage:
@@ -29,3 +30,4 @@ class BasePage:
     def scroll_to_element(self, locator):
         element = self.driver.find_element(*locator)
         self.driver.execute_script('arguments[0].scrollIntoView();', element)
+
