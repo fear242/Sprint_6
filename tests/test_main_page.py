@@ -22,6 +22,6 @@ class TestMainPage:
     @allure.title('Проверка соответствия текста ответов вопросам')
     def test_questions_and_answers(self, driver, num, result):
         main_page = MainPage(driver)
-        main_page.open_main_paige_confirm_cookies()
+        main_page.open_paige_confirm_cookies('https://qa-scooter.praktikum-services.ru/')
         main_page.scroll_to_questions_block()
         assert main_page.get_text_from_answer(num) == result

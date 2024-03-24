@@ -17,7 +17,7 @@ class TestOrderPage:
     @allure.title('Проверка позитивного сценария заказа')
     def test_making_order_positive(self, driver, button_order_locator, name, family_name, address, phone):
         order_page = OrderPage(driver)
-        order_page.open_order_paige_confirm_cookies()
+        order_page.open_paige_confirm_cookies('https://qa-scooter.praktikum-services.ru/')
         order_page.click_on_element(button_order_locator)
         order_page.fulfill_personal_data_form(name, family_name, address, phone)
         order_page.scroll_and_click_next_button()

@@ -2,6 +2,8 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 import allure
 
+from locators.main_page_locators import MainPageLocators
+
 
 class BasePage:
 
@@ -30,4 +32,9 @@ class BasePage:
     def scroll_to_element(self, locator):
         element = self.driver.find_element(*locator)
         self.driver.execute_script('arguments[0].scrollIntoView();', element)
+
+    @allure.step('Открываем страницу и соглашаемся с cookies')
+    def open_paige_confirm_cookies(self, link):
+        self.driver.get(link)
+        self.click_on_element(MainPageLocators.BUTTON_COOKIES)
 

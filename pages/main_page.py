@@ -5,11 +5,6 @@ import allure
 
 class MainPage(BasePage):
 
-    @allure.step('Открываем главную и соглашаемся с cookies')
-    def open_main_paige_confirm_cookies(self):
-        self.driver.get('https://qa-scooter.praktikum-services.ru/')
-        self.click_on_element(MainPageLocators.BUTTON_COOKIES)
-
     @allure.step('Кликаем по вопросу и получаем текст ответа')
     def get_text_from_answer(self, num):
         locator_q_formatted = self.format_locators(MainPageLocators.QUESTION_LOCATOR, num)
@@ -32,5 +27,3 @@ class MainPage(BasePage):
     @allure.step('Ищем кнопку "Найти"')
     def find_search_button(self):
         self.find_element_with_wait(MainPageLocators.BUTTON_SEARCH)
-
-

@@ -6,11 +6,6 @@ from locators.order_page_locators import OrderPageLocators
 
 class OrderPage(BasePage):
 
-    @allure.step('Открываем страницу заказа и соглашаемся с cookies')
-    def open_order_paige_confirm_cookies(self):
-        self.driver.get('https://qa-scooter.praktikum-services.ru/order')
-        self.click_on_element(MainPageLocators.BUTTON_COOKIES)
-
     @allure.step('Заполняем форму "Для кого самокат"')
     def fulfill_personal_data_form(self, name, family_name, address, phone):
         self.text_input_to_element(OrderPageLocators.NAME_FIELD, name)
