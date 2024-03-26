@@ -38,3 +38,6 @@ class BasePage:
         self.driver.get(link)
         self.click_on_element(MainPageLocators.BUTTON_COOKIES)
 
+    @allure.step('Получаем текущий url')
+    def receive_current_url(self):
+        return self.driver.current_url

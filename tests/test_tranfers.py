@@ -10,7 +10,7 @@ class TestTransfers:
         order_page = OrderPage(driver)
         order_page.open_paige_confirm_cookies('https://qa-scooter.praktikum-services.ru/order')
         order_page.cllick_on_samokat_logo()
-        assert order_page.driver.current_url == 'https://qa-scooter.praktikum-services.ru/'
+        assert order_page.receive_current_url() == 'https://qa-scooter.praktikum-services.ru/'
 
     @allure.title('Проверка перехода на Дзен по клику на лого Яндекс')
     def test_click_yandex_logo(self, driver):
@@ -19,4 +19,4 @@ class TestTransfers:
         main_page.click_on_yandex_logo()
         main_page.switch_driver_to_tab()
         main_page.find_search_button()
-        assert main_page.driver.current_url == 'https://dzen.ru/?yredirect=true'
+        assert main_page.receive_current_url() == 'https://dzen.ru/?yredirect=true'
